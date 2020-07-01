@@ -23,7 +23,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("Compte")
 public class CompteControlleur {
@@ -47,9 +47,9 @@ public class CompteControlleur {
 		compteService.deleteCompte(compteId);
 	}
 	 @Bean
-	    public Docket productApi() {
-	        return new Docket(DocumentationType.SWAGGER_2).select()
-	                .apis(RequestHandlerSelectors.basePackage("Api.Rest.Controlleur")).build();
-	    }
+	public Docket productApi() {
+	return new Docket(DocumentationType.SWAGGER_2).select()
+	.apis(RequestHandlerSelectors.basePackage("Api.Rest.Controlleur")).build();
+	 }
 
 }
