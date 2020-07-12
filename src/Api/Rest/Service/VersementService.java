@@ -1,7 +1,9 @@
 package Api.Rest.Service;
 
+import Api.Rest.Entity.Versement;
+
 public interface VersementService {
 	
-	public void verser(String codecmpt,Double montant);
+	Versement insert(Versement ver);
 
 }

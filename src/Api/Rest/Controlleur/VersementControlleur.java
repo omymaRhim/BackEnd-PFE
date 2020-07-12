@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import Api.Rest.Entity.Versement;
 import Api.Rest.Service.VersementService;
 
 
@@ -18,7 +19,9 @@ public class VersementControlleur {
 	private VersementService versementservice;
 	
 	@PostMapping("/versement")
-	public void Verser(@RequestBody String codecmpt, double montant) {
-		versementservice.verser(codecmpt, montant);
+	public Versement insert(@RequestBody Versement versement) {
+		return versementservice.insert(versement);
+	
 	}
 }
+

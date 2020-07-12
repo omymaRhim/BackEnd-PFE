@@ -93,7 +93,8 @@ public class AuthController {
 
 		// Create new user's account
 		user user = new user(signUpRequest.getUsername(), 
-				 signUpRequest.getEmail(),encoder.encode(signUpRequest.getPassword()));
+				 signUpRequest.getEmail(),
+				 encoder.encode(signUpRequest.getPassword()));
 
 		Set<String> strRoles = signUpRequest.getRoles();
 		Set<Role> roles = new HashSet<>();

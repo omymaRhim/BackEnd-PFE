@@ -1,52 +1,102 @@
 package Api.Rest.Entity;
 
-import java.util.Date;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Client")
+
+
+import javax.validation.constraints.Size;
+
+
+@Document(collection = "MVD")
 public class Versement {
 	
 	@Id
-	private String codecmpt ;
+    private int REFMVD;
 	
-	private Double montant;
+	@Size(max = 8)
+	private int ORDCPXMVD;
 	
-	private Date date ;
+	@Size(max = 15)
+	private double MNT2MVD;
+	
+	@Size(max = 15)
+	private double MNTMVD;
+	
+	@Size(max = 2)
+	private String TDCMVD;
+	
+	@Size(max = 13)
+	private String NDCMVD;
 
-	public Versement(String codecmpt, Double montant, Date date) {
-		this.codecmpt = codecmpt;
-		this.montant = montant;
-		this.date = date;
+	public Versement(int REFMVD, int ORDCPXMVD, double MNT2MVD, double MNTMVD,String TDCMVD, String NDCMVD) {
+		super();
+		this.REFMVD = REFMVD;
+		this.ORDCPXMVD = ORDCPXMVD;
+		this.MNT2MVD = MNT2MVD;
+		this.MNTMVD = MNTMVD;
+		this.TDCMVD = TDCMVD;
+		this.NDCMVD = NDCMVD;
 	}
 
-	public String getCodecmpt() {
-		return codecmpt;
+	public int getREFMVD() {
+		return REFMVD;
 	}
 
-	public void setCodecmpt(String codecmpt) {
-		this.codecmpt = codecmpt;
+	public void setREFMVD(int rEFMVD) {
+		REFMVD = rEFMVD;
 	}
 
-	public Double getMontant() {
-		return montant;
+	public int getORDCPXMVD() {
+		return ORDCPXMVD;
 	}
 
-	public void setMontant(Double montant) {
-		this.montant = montant;
+	public void setORDCPXMVD(int oRDCPXMVD) {
+		ORDCPXMVD = oRDCPXMVD;
 	}
 
-	public Date getDate() {
-		return date;
+	public double getMNT2MVD() {
+		return MNT2MVD;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setMNT2MVD(double mNT2MVD) {
+		MNT2MVD = mNT2MVD;
+	}
+
+	public double getMNTMVD() {
+		return MNTMVD;
+	}
+
+	public void setMNTMVD(double mNTMVD) {
+		MNTMVD = mNTMVD;
+	}
+
+	public String getTDCMVD() {
+		return TDCMVD;
+	}
+
+	public void setTDCMVD(String tDCMVD) {
+		TDCMVD = tDCMVD;
+	}
+
+	public String getNDCMVD() {
+		return NDCMVD;
+	}
+
+	public void setNDCMVD(String nDCMVD) {
+		NDCMVD = nDCMVD;
 	}
 	
 	
-	
 
 	
+	
+	
+ 
 }
+
+
+	
+
